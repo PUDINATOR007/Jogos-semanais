@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>JOGOS DO MÊS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 60px;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 24px;
+      line-height: 2;
+    }
+
+    header, footer {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    h1 {
+      font-size: 60px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      padding: 16px 32px;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      background-color: #444;
+      color: white;
+      font-size: 22px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .caixa-requisitos,
+    .caixa-votacao,
+    .caixa-gerente,
+    .caixa-volta {
+      background-color: #e0e0e0;
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 50px;
+    }
+
+    ul {
+      margin-left: 60px;
+    }
+
+    .texto-final {
+      margin-top: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+      font-size: 22px;
+    }
+
+    footer p {
+      font-size: 20px;
+      margin-top: 60px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    .dark-mode .caixa-requisitos,
+    .dark-mode .caixa-votacao,
+    .dark-mode .caixa-gerente,
+    .dark-mode .caixa-volta {
+      background-color: #1f1f1f;
+    }
+
+    .dark-mode button {
+      background-color: #ddd;
+      color: #121212;
+    }
+
+    .dark-mode button:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JOGOS DO MÊS</h1>
+    <button onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+  </header>
+
+  <main id="conteudo">
+    <section class="caixa-requisitos">
+      <h2>REQUISITOS PARA OS JOGOS</h2>
+      <ul>
+        <li>1. Ser um jogo multiplayer com suporte para no mínimo 12 jogadores.</li>
+        <li>2. Estar disponível gratuitamente para celular e computador.</li>
+        <li>3. Ter partidas com duração mínima de 20 minutos.</li>
+      </ul>
+    </section>
+
+    <section class="caixa-votacao">
+      <h2>HORA DA VOTAÇÃO</h2>
+      <ul>
+        <li>1. Cada pessoa poderá votar em até dois jogos diferentes por votação.</li>
+        <li>2. Ninguém poderá votar após o encerramento da votação.</li>
+      </ul>
+      <div class="texto-final">
+        <strong>Encerramento da votação:</strong><br>
+        Se a jogatina for no sábado, a votação termina às 00:00 do dia anterior.<br>
+        Ou seja, à meia-noite de sexta para sábado, o gerente deverá tirar um print do resultado final da votação, para evitar que alguém mude os votos de última hora.
+      </div>
+    </section>
+
+    <section class="caixa-gerente">
+      <h2>GERENTE DOS JOGOS</h2>
+      <div class="texto-final">
+        O Gerente dos Jogos será a pessoa responsável por escolher os jogos da semana.
+        <br><br>
+        <strong>Como é escolhido?</strong><br>
+        Todo sábado, logo após a jogatina, será feita uma mini enquete de 1 hora para decidir quem será o próximo gerente.
+        <br><br>
+        <strong>Regras e especificações:</strong><br>
+        Se o gerente for escolhido após as 00:00, ainda contará como se fosse sábado da semana anterior.<br>
+        Exemplo: a jogatina acontece na sexta, mas o gerente é escolhido já no sábado (após a meia-noite); nesse caso, ele ainda será considerado o gerente da "sexta".<br>
+        E a retorno dos jogos também da sexta.
+      </div>
+    </section>
+
+    <section class="caixa-volta">
+      <h2>VOLTA DOS JOGOS</h2>
+      <div class="texto-final">
+        Para garantir variedade e evitar que sempre os mesmos jogos ganhem as votações, cada jogo terá regras específicas para voltar às enquetes.
+        <br><br>
+        <strong>Regras de Retorno</strong>
+        <ul>
+          <li><strong>1. Jogo em 2º lugar:</strong><br>
+            Sempre que um jogo ficar em segundo lugar, ele retorna automaticamente na próxima votação.<br>
+            Exemplo: Se Dead Rails ficou em 2º lugar no dia 7, ele voltará na votação do dia 14.
+          </li>
+          <li><strong>2. Jogo que não ficou em 1º nem 2º lugar:</strong><br>
+            Pode ser incluído novamente após 5 votações/semanas (cerca de 1 mês e 1 semana).<br>
+            Exemplo: Um jogo perde no dia 1º. O gerente poderá colocá-lo de volta a partir da semana seguinte ao dia 7 de volta.
+          </li>
+          <li><strong>3. Jogo que venceu:</strong><br>
+            Pode ser colocado novamente após 8 votações/semanas (cerca de 2 meses).
+          </li>
+        </ul>
+        <br>
+        <strong>Limites de retorno</strong>
+        <ul>
+          <li><strong>Jogos perdedores:</strong><br>
+            Cada jogo pode voltar até 10 vezes, mesmo que perca sempre.<br>
+            Toda vez que o jogo participa da votação e não vence, conta como uma tentativa usada.
+          </li>
+          <li><strong>Jogos em 2º lugar:</strong><br>
+            Podem retornar automaticamente por até 2 vezes seguidas.<br>
+            Se um jogo ficar em segundo duas vezes seguidas, ele não volta automaticamente na terceira.<br>
+            Importante: Retornos por 2º lugar não contam dentro do limite de 10 retornos.
+          </li>
+          <li><strong>Jogos vencedores:</strong><br>
+            Podem ser colocados novamente até 5 vezes no total (respeitando o intervalo de 8 semanas entre as participações).
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong>Site criado por</strong><br>
+      Guylherme Yoshimura Paiva<br>
+      Luã Carlos Costa
+    </p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
