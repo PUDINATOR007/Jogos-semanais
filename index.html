@@ -15,20 +15,25 @@
       line-height: 2;
     }
 
-    header, footer {
+    header {
       text-align: center;
-      margin: 60px 0;
+      margin-bottom: 60px;
     }
 
     h1 {
       font-size: 60px;
-      margin-bottom: 30px;
+      margin: 0 0 20px 0;
+      user-select: none;
     }
 
-    h2 {
-      font-size: 36px;
-      margin-top: 20px;
-      text-align: center;
+    .header-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .left-space {
+      display: none; /* espaço reservado removido da visualização */
     }
 
     button {
@@ -51,14 +56,17 @@
       margin: 0 auto;
     }
 
-    .caixa-requisitos,
-    .caixa-votacao,
-    .caixa-gerente,
-    .caixa-volta {
+    section {
       background-color: #e0e0e0;
       padding: 40px;
       border-radius: 20px;
       margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-top: 0;
+      text-align: center;
     }
 
     ul {
@@ -72,7 +80,6 @@
       font-size: 22px;
     }
 
-    /* NOVO: estilo para o texto extra que adicionamos */
     .texto-extra {
       margin: 30px 40px 0 40px;
       font-size: 22px;
@@ -92,10 +99,7 @@
       color: #f1f1f1;
     }
 
-    .dark-mode .caixa-requisitos,
-    .dark-mode .caixa-votacao,
-    .dark-mode .caixa-gerente,
-    .dark-mode .caixa-volta {
+    .dark-mode section {
       background-color: #1f1f1f;
     }
 
@@ -112,11 +116,14 @@
 <body>
   <header>
     <h1>JOGOS DO MÊS</h1>
-    <button onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+    <div class="header-buttons">
+      <button onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+      <button onclick="window.location.href='retorno.html'">Ver Retornos</button>
+    </div>
   </header>
 
   <main id="conteudo">
-    <section class="caixa-requisitos">
+    <section>
       <h2>REQUISITOS PARA OS JOGOS</h2>
       <ul>
         <li>1. Ser um jogo multiplayer com suporte para no mínimo 12 jogadores.</li>
@@ -125,7 +132,7 @@
       </ul>
     </section>
 
-    <section class="caixa-votacao">
+    <section>
       <h2>HORA DA VOTAÇÃO</h2>
       <ul>
         <li>1. Cada pessoa poderá votar em até dois jogos diferentes por votação.</li>
@@ -138,7 +145,7 @@
       </div>
     </section>
 
-    <section class="caixa-gerente">
+    <section>
       <h2>GERENTE DOS JOGOS</h2>
       <div class="texto-final">
         O Gerente dos Jogos será a pessoa responsável por escolher os jogos da semana.
@@ -153,7 +160,7 @@
       </div>
     </section>
 
-    <section class="caixa-volta">
+    <section>
       <h2>VOLTA DOS JOGOS</h2>
       <div class="texto-final">
         Para garantir variedade e evitar que sempre os mesmos jogos ganhem as votações, cada jogo terá regras específicas para voltar às enquetes.
@@ -189,7 +196,6 @@
           </li>
         </ul>
       </div>
-      <!-- TEXTO EXTRA ADICIONADO AQUI -->
       <div class="texto-extra">
         Agora você já pode começar sua jogatina!<br>
         <em>Textos aprimorados com IA</em>
